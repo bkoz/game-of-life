@@ -142,6 +142,19 @@
                     <api_hoster>app.jelastic.servint.net</api_hoster>
                 </configuration>
             </plugin>
+            <!-- The JBoss AS plugin deploys your war to a local JBoss AS container -->
+          <!-- To use, run: mvn package jboss-as:deploy -->
+          <plugin>
+            <groupId>org.jboss.as.plugins</groupId>
+            <artifactId>jboss-as-maven-plugin</artifactId>
+            <!--        <version>${version.jboss.maven.plugin}</version>    -->
+            <version>7.7.Final</version>
+            <configuration>
+              <serverArgs>
+                <serverArg>-b=0.0.0.0</serverArg>
+              </serverArgs>
+            </configuration>
+          </plugin>
 
         </plugins>
 
